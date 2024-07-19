@@ -5,6 +5,10 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+	async redirects() {
+		return [{ source: "/about", destination: "https://youtu.be/dQw4w9WgXcQs", permanent: false }];
+	},
+};
 
 export default config;
