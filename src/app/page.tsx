@@ -15,30 +15,34 @@ export default function HomePage() {
 					<Link
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="https://www.linkedin.com/in/nash-pillai/"
-						target="_blank">
+						target="_blank"
+						data-aos="fade-right">
 						<h3 className="text-2xl font-bold">My Linkedin →</h3>
-						<GradualSpacing className="text-lg" text="Keep up with my latest projects." />
+						<GradualSpacing initialDelay={1} className="text-lg" text="Keep up with my latest projects." />
 					</Link>
 					<Link
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="https://github.com/nash-pillai/"
-						target="_blank">
+						target="_blank"
+						data-aos="fade-left">
 						<h3 className="text-2xl font-bold">My Github →</h3>
-						<GradualSpacing className="text-lg" text="See all my other cool websites." />
+						<GradualSpacing initialDelay={1} className="text-lg" text="See all my other cool websites." />
 					</Link>
 					<Link
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="mailto:nash.pillai@protonmail.com"
-						target="_blank">
+						target="_blank"
+						data-aos="fade-right">
 						<h3 className="text-2xl font-bold">Contact Me →</h3>
-						<GradualSpacing className="text-lg" text="Send me an email." />
+						<GradualSpacing initialDelay={1} className="text-lg" text="Send me an email." />
 					</Link>
 					<Link
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="/resume"
-						target="_blank">
+						target="_blank"
+						data-aos="fade-left">
 						<h3 className="text-2xl font-bold">My Resume →</h3>
-						<GradualSpacing className="text-lg" text="A quick sample of my work." />
+						<GradualSpacing initialDelay={1} className="text-lg" text="A quick sample of my work." />
 					</Link>
 				</div>
 			</div>

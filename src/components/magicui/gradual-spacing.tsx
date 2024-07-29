@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 interface GradualSpacingProps {
 	text: string;
 	duration?: number;
+	initialDelay?: number;
 	delayMultiple?: number;
 	framerProps?: Variants;
 	className?: string;
@@ -15,6 +16,7 @@ interface GradualSpacingProps {
 export default function GradualSpacing({
 	text,
 	duration = 0.1,
+	initialDelay = 0,
 	delayMultiple = 0.04,
 	framerProps = {
 		hidden: { opacity: 0, x: -20 },
@@ -32,8 +34,9 @@ export default function GradualSpacing({
 						animate="visible"
 						exit="hidden"
 						variants={framerProps}
-						transition={{ duration, delay: i * delayMultiple }}
-						className={cn("drop-shadow-sm", className)}>
+						transition={{ duration, delay: i * delayMultiple + initialDelay }}
+						className={cn("drop-shadow-sm", className)}
+					>
 						{char === " " ? <span>&nbsp;</span> : char}
 					</motion.div>
 				))}
