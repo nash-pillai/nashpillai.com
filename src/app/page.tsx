@@ -17,7 +17,8 @@ export default function HomePage() {
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="https://www.linkedin.com/in/nash-pillai/"
 						target="_blank"
-						data-aos="fade-right">
+						data-aos="fade-right"
+					>
 						<h3 className="text-2xl font-bold">My Linkedin →</h3>
 						<GradualSpacing initialDelay={1} className="text-lg" text="Keep up with my latest projects." />
 					</Link>
@@ -25,7 +26,8 @@ export default function HomePage() {
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="https://github.com/nash-pillai/"
 						target="_blank"
-						data-aos="fade-left">
+						data-aos="fade-left"
+					>
 						<h3 className="text-2xl font-bold">My Github →</h3>
 						<GradualSpacing initialDelay={1} className="text-lg" text="See all my other cool websites." />
 					</Link>
@@ -33,7 +35,8 @@ export default function HomePage() {
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="mailto:nash.pillai@protonmail.com"
 						target="_blank"
-						data-aos="fade-right">
+						data-aos="fade-right"
+					>
 						<h3 className="text-2xl font-bold">Contact Me →</h3>
 						<GradualSpacing initialDelay={1} className="text-lg" text="Send me an email." />
 					</Link>
@@ -41,7 +44,8 @@ export default function HomePage() {
 						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
 						href="/resume"
 						target="_blank"
-						data-aos="fade-left">
+						data-aos="fade-left"
+					>
 						<h3 className="text-2xl font-bold">My Resume →</h3>
 						<GradualSpacing initialDelay={1} className="text-lg" text="A quick sample of my work." />
 					</Link>
