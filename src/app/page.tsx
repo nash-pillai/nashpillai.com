@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import WordPullUp from "@/components/magicui/word-pull-up";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -45,6 +46,14 @@ export default function HomePage() {
 						<GradualSpacing initialDelay={1} className="text-lg" text="A quick sample of my work." />
 					</Link>
 				</div>
+				<Link href="#portfolio" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1000">
+					<div className="group flex max-w-xl flex-col gap-4 rounded-xl bg-white/0 p-4 text-white transition duration-300 ease-in-out hover:bg-white/5">
+						<h3 className="text-2xl font-bold">{"Take a tour of what I've made"}</h3>
+						<div className="m-auto text-lg transition-transform duration-700 ease-in-out group-hover:translate-y-3">
+							<ChevronDown size={32} />
+						</div>
+					</div>
+				</Link>
 			</div>
 		</main>
 	);
