@@ -22,6 +22,20 @@ export default function HomePage() {
 						<h3 className="text-2xl font-bold">My Github →</h3>
 						<div className="text-lg">See all my other cool websites.</div>
 					</Link>
+					<Link
+						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+						href="mailto:nash.pillai@protonmail.com"
+						target="_blank">
+						<h3 className="text-2xl font-bold">Contact Me →</h3>
+						<div className="text-lg">Send me an email.</div>
+					</Link>
+					<Link
+						className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+						href="/resume"
+						target="_blank">
+						<h3 className="text-2xl font-bold">My Resume →</h3>
+						<div className="text-lg">A quick sample of my work.</div>
+					</Link>
 				</div>
 			</div>
 		</main>
