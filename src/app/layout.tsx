@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import RootLayoutClient from "./layoutClient";
 
 export const metadata: Metadata = {
 	title: "Nash Pillai",
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en" className={`${GeistSans.variable}`}>
-			<body>{children}</body>
+			<body>
+				<RootLayoutClient>{children}</RootLayoutClient>
+			</body>
 		</html>
 	);
 }
