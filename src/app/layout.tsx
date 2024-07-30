@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${GeistSans.variable}`}>
+		<html lang="en" className={`${GeistSans.variable} dark:bg-stone-900 dark:text-gray-100`}>
 			<body>
 				<RootLayoutClient>{children}</RootLayoutClient>
 			</body>
