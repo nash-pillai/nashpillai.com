@@ -14,10 +14,5 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
 			easing: "ease-out-sine",
 		});
 	});
-
-	return (
-		<div className="flex min-h-screen flex-col overflow-hidden dark:bg-stone-900 dark:text-gray-100">
-			<main className="grow">{children}</main>
-		</div>
-	);
+	return <div className="flex min-h-screen flex-col">{children}</div>;
 }
