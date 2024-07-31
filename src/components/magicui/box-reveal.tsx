@@ -4,13 +4,24 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 interface BoxRevealProps {
-	children: JSX.Element;
+	children: JSX.Element | string;
 	width?: "fit-content" | "100%";
 	boxColor?: string;
 	duration?: number;
+	state?: "visible" | "hidden";
+	className?: string;
+	offset?: number;
 }
 
-export const BoxReveal = ({ children, width = "fit-content", boxColor, duration }: BoxRevealProps) => {
+export const BoxReveal = ({
+	children,
+	width = "fit-content",
+	boxColor,
+	duration,
+	state,
+	className,
+	offset = 0,
+}: BoxRevealProps) => {
 	const mainControls = useAnimation();
 	const slideControls = useAnimation();
 
@@ -18,17 +29,13 @@ export const BoxReveal = ({ children, width = "fit-content", boxColor, duration 
 	const isInView = useInView(ref, { once: true });
 
 	useEffect(() => {
-		if (isInView) {
-			void slideControls.start("visible");
-			void mainControls.start("visible");
-		} else {
-			void slideControls.start("hidden");
-			void mainControls.start("hidden");
-		}
-	}, [isInView, mainControls, slideControls]);
+		const newState = state ?? (isInView ? "visible" : "hidden");
+		void slideControls.start(newState);
+		void mainControls.start(newState);
+	}, [isInView, mainControls, slideControls, state]);
 
 	return (
-		<div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+		<div ref={ref} style={{ position: "relative", width, overflow: "hidden" }} className={className}>
 			<motion.div
 				variants={{
 					hidden: { opacity: 0, y: 75 },
@@ -36,7 +43,7 @@ export const BoxReveal = ({ children, width = "fit-content", boxColor, duration 
 				}}
 				initial="hidden"
 				animate={mainControls}
-				transition={{ duration: duration ? duration : 0.5, delay: 0.25 }}
+				transition={{ duration: duration ? duration : 0.5, delay: 0.25 + offset }}
 			>
 				{children}
 			</motion.div>
@@ -48,7 +55,7 @@ export const BoxReveal = ({ children, width = "fit-content", boxColor, duration 
 				}}
 				initial="hidden"
 				animate={slideControls}
-				transition={{ duration: duration ? duration : 0.5, ease: "easeIn" }}
+				transition={{ duration: duration ? duration : 0.5, ease: "easeIn", delay: offset }}
 				style={{
 					position: "absolute",
 					top: 4,

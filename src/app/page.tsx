@@ -2,6 +2,7 @@
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import TextReveal from "@/components/magicui/text-reveal";
 import WordPullUp from "@/components/magicui/word-pull-up";
+import { Project } from "@/components/project";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
@@ -63,21 +64,18 @@ export default function HomePage() {
 				</div>
 			</section>
 			<section className="group w-full bg-gradient-to-b from-[#15162c] to-[#2e026d]">
-				<div className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg" id="portfolio1">
-					<TextReveal text="Imagine an site that lets you track bills going through Congress." />
-				</div>
-				<div className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg" id="portfolio2">
-					<TextReveal text="Imagine an site that lets you manage tens of thousands of parts." />
-				</div>
-				<div className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg" id="portfolio3">
-					<TextReveal text="Imagine an site where you can talk to AI tutors trained specifically for your courses" />
-				</div>
-				<div className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg" id="portfolio4">
-					<TextReveal text="Imagine an site where you can stay informed and fight to defend the environment" />
-				</div>
-				<div className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg" id="portfolio5">
-					<TextReveal text="Imagine an site where you can stay informed and fight to defend the environment" />
-				</div>
+				<Project
+					title="Imagine an site that lets you track bills going through Congress."
+					index={1}
+					body={["https://progressincongress.org/", "Built with Next.js and TailwindCSS"]}
+				/>
+				<Project title="Imagine an site that lets you manage tens of thousands of parts." index={2} />
+				<Project
+					title="Imagine an site where you can talk to AI tutors trained specifically for your courses"
+					index={3}
+				/>
+				<Project title="Imagine an site where you can stay informed and fight to defend the environment" index={4} />
+				<Project title="Imagine an site where you can stay informed and fight to defend the environment" index={5} />
 			</section>
 		</main>
 	);
