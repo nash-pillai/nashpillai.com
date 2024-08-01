@@ -3,7 +3,7 @@ import GradualSpacing from "@/components/magicui/gradual-spacing";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Project } from "@/components/project";
 import { ChevronDown, LinkIcon } from "lucide-react";
-import { CldImage, getCldImageUrl } from "next-cloudinary";
+import { CldImage, getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Link from "next/link";
 
 const ProjectLink = (url: string) => (
@@ -32,7 +32,7 @@ const projects = [
 		title: "Imagine an site where you can talk to AI tutors trained specifically for your courses",
 		body: [ProjectLink("deaplearning.com"), "Over 200k students impacted", "Built with Next.js and TailwindCSS"],
 		gradient: "from-[#15162c] to-[#2e026d]",
-		media: <video src={getCldImageUrl({ src: "nashpillai.com/deap1" })} autoPlay className="rounded-lg" />,
+		media: <video src={getCldVideoUrl({ src: "nashpillai.com/deap1" })} autoPlay className="rounded-lg" />,
 	},
 	{
 		title: "Imagine an site where you can stay informed and fight to defend the environment",
