@@ -9,10 +9,12 @@ export function Project({
 	title,
 	index,
 	body = [],
+	media,
 }: {
 	title: string;
 	index: number;
 	body?: (JSX.Element | string)[];
+	media?: JSX.Element | string;
 }) {
 	const targetRef = useRef<HTMLDivElement | null>(null);
 
@@ -48,28 +50,28 @@ export function Project({
 								);
 							})}
 						</p>
-						{showBox &&
-							body.map((b, i) => (
-								<BoxReveal
-									key={i}
-									width="100%"
-									boxColor="#5046e6"
-									duration={0.5}
-									offset={i * 0.2}
-									className="my-1"
-									state={showBox ? "visible" : "hidden"}
-								>
-									{b}
-								</BoxReveal>
-							))}
+						{body.map((b, i) => (
+							<BoxReveal
+								key={i}
+								width="100%"
+								boxColor="#5046e6"
+								duration={0.4}
+								offset={i * 0.2}
+								className={`my-1 ${!showBox && "opacity-0"}`}
+								state={showBox ? "visible" : "hidden"}
+							>
+								{b}
+							</BoxReveal>
+						))}
 					</div>
 					<motion.div
 						style={{
-							y: useTransform(scrollYProgress, (v) => 3000 * (v - 0.5) ** 3),
+							y: useTransform(scrollYProgress, (v) => -3000 * (v - 0.5) ** 3),
 							opacity: useTransform(scrollYProgress, (v) => -10 * (v - 0.5) ** 2 + 2),
 						}}
+						className="max-h-full flex-col"
 					>
-						<video src="https://deaplearning.com/images/homePageVideo.mp4" autoPlay />
+						{media}
 					</motion.div>
 				</div>
 			</div>

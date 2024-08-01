@@ -3,6 +3,7 @@ import GradualSpacing from "@/components/magicui/gradual-spacing";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Project } from "@/components/project";
 import { ChevronDown, LinkIcon } from "lucide-react";
+import { CldImage, getCldImageUrl } from "next-cloudinary";
 import Link from "next/link";
 
 const ProjectLink = (url: string) => (
@@ -19,6 +20,7 @@ const projects = [
 			"Won the Congressional App Challenge and was demoed at the US Capitol",
 			"Built with Next.js and TailwindCSS",
 		],
+		media: <img src={getCldImageUrl({ src: `nashpillai.com/congress${1}` })} />,
 		gradient: "from-[#15162c] to-[#2e026d]",
 	},
 	{
@@ -30,6 +32,7 @@ const projects = [
 		title: "Imagine an site where you can talk to AI tutors trained specifically for your courses",
 		body: [ProjectLink("deaplearning.com"), "Over 200k students impacted", "Built with Next.js and TailwindCSS"],
 		gradient: "from-[#15162c] to-[#2e026d]",
+		media: <video src={getCldImageUrl({ src: "nashpillai.com/deap1" })} autoPlay className="rounded-lg" />,
 	},
 	{
 		title: "Imagine an site where you can stay informed and fight to defend the environment",
@@ -106,7 +109,7 @@ export default function HomePage() {
 			</section>
 			{projects.map((project, index) => (
 				<section key={index} className={`w-full bg-gradient-to-b ${project.gradient}`}>
-					<Project title={project.title} index={index} body={project.body} />
+					<Project title={project.title} index={index} body={project.body} media={project.media} />
 				</section>
 			))}
 		</main>
