@@ -1,10 +1,51 @@
 /* eslint-disable react/jsx-key */
 import GradualSpacing from "@/components/magicui/gradual-spacing";
-import TextReveal from "@/components/magicui/text-reveal";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Project } from "@/components/project";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, LinkIcon } from "lucide-react";
 import Link from "next/link";
+
+const ProjectLink = (url: string) => (
+	<Link href={`https://${url}/`} className="flex items-center hover:underline" target="_blank">
+		<LinkIcon height={18} />
+		{url}
+	</Link>
+);
+const projects = [
+	{
+		title: "Imagine an site that lets you track bills going through Congress.",
+		body: [
+			ProjectLink("progressincongress.org"),
+			"Won the Congressional App Challenge and was demoed at the US Capitol",
+			"Built with Next.js and TailwindCSS",
+		],
+		gradient: "from-[#15162c] to-[#2e026d]",
+	},
+	{
+		title: "Imagine an site that lets you manage tens of thousands of parts.",
+		body: [ProjectLink("inventory.jaybots.org"), "Built with Next.js and TailwindCSS"],
+		gradient: "from-[#2e026d] to-[#15162c]",
+	},
+	{
+		title: "Imagine an site where you can talk to AI tutors trained specifically for your courses",
+		body: [ProjectLink("deaplearning.com"), "Over 200k students impacted", "Built with Next.js and TailwindCSS"],
+		gradient: "from-[#15162c] to-[#2e026d]",
+	},
+	{
+		title: "Imagine an site where you can stay informed and fight to defend the environment",
+		body: [ProjectLink("tedinitiative.org"), "Built with Next.js and TailwindCSS"],
+		gradient: "from-[#2e026d] to-[#15162c]",
+	},
+	{
+		title: "Imagine an site where you can learn statistics interactively",
+		body: [
+			ProjectLink("stapplet.com"),
+			"Over 100k students impacted",
+			"Improved by me to have more customizability and more accurate graphs",
+		],
+		gradient: "from-[#15162c] to-[#2e026d]",
+	},
+];
 
 export default function HomePage() {
 	return (
@@ -63,20 +104,11 @@ export default function HomePage() {
 					</Link>
 				</div>
 			</section>
-			<section className="group w-full bg-gradient-to-b from-[#15162c] to-[#2e026d]">
-				<Project
-					title="Imagine an site that lets you track bills going through Congress."
-					index={1}
-					body={["https://progressincongress.org/", "Built with Next.js and TailwindCSS"]}
-				/>
-				<Project title="Imagine an site that lets you manage tens of thousands of parts." index={2} />
-				<Project
-					title="Imagine an site where you can talk to AI tutors trained specifically for your courses"
-					index={3}
-				/>
-				<Project title="Imagine an site where you can stay informed and fight to defend the environment" index={4} />
-				<Project title="Imagine an site where you can stay informed and fight to defend the environment" index={5} />
-			</section>
+			{projects.map((project, index) => (
+				<section key={index} className={`w-full bg-gradient-to-b ${project.gradient}`}>
+					<Project title={project.title} index={index} body={project.body} />
+				</section>
+			))}
 		</main>
 	);
 }

@@ -5,24 +5,31 @@ import { Word } from "./magicui/text-reveal";
 import { clamp, useScroll, useTransform } from "framer-motion";
 import BoxReveal from "./magicui/box-reveal";
 
-export function Project({ title, index, body = ["Test"] }: { title: string; index: number; body?: string[] }) {
+export function Project({
+	title,
+	index,
+	body = [],
+}: {
+	title: string;
+	index: number;
+	body?: (JSX.Element | string)[];
+}) {
 	const targetRef = useRef<HTMLDivElement | null>(null);
 
 	const { scrollYProgress } = useScroll({ target: targetRef });
 	const words = title.split(" ");
-	const titleProgress = useTransform(scrollYProgress, (x) => clamp(0, 1, x * 2));
+	const titleProgress = useTransform(scrollYProgress, (x) => clamp(0, 1, x * 3));
 
 	const [showBox, setShowBox] = useState(false);
 
-	scrollYProgress.on("change", (v) => setShowBox(v > 0.5));
+	scrollYProgress.on("change", (v) => setShowBox(v > 0.35));
 
 	return (
 		<div
 			ref={targetRef}
 			className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg"
-			id={`portfolio${index}`}
+			id={`portfolio${index + 1}`}
 		>
-			{/* <TextReveal text={title} progress={useTransform(scrollYProgress, (x) => clamp(0, 1, x * 2))} /> */}
 			<div ref={targetRef} className={"relative z-0 h-[200vh]"}>
 				<div
 					className={
@@ -48,15 +55,15 @@ export function Project({ title, index, body = ["Test"] }: { title: string; inde
 					{showBox &&
 						body.map((b, i) => (
 							<BoxReveal
-								key={b}
+								key={i}
 								width="100%"
 								boxColor="#5046e6"
 								duration={0.5}
 								offset={i * 0.2}
-								className="sticky top-0"
+								className="my-1"
 								state={showBox ? "visible" : "hidden"}
 							>
-								<div className="">{b}</div>
+								{b}
 							</BoxReveal>
 						))}
 				</div>
