@@ -9,7 +9,7 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
 	useEffect(() => {
 		AOS.init({
 			once: true,
-			disable: "phone",
+			// disable: "phone",
 			duration: 600,
 			easing: "ease-out-sine",
 		});
