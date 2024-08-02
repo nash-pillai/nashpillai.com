@@ -3,11 +3,20 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import RootLayoutClient from "./layoutClient";
+import { getCldImageUrl } from "next-cloudinary";
+import { env } from "@/env";
 
 export const metadata: Metadata = {
 	title: "Nash Pillai",
-	description: "What a cool guy",
-	icons: [{ rel: "icon", url: "/favicon.ico" }],
+	description: "#1 coder",
+	icons: [{ rel: "icon", url: getCldImageUrl({ src: "nashpillai.com/logo" }) }],
+	openGraph: {
+		type: "website",
+		siteName: "Nash Pillai",
+		title: "Nash Pillai",
+		description: "#1 coder",
+		url: env.URL,
+	},
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

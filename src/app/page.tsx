@@ -3,7 +3,7 @@ import GradualSpacing from "@/components/magicui/gradual-spacing";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Project } from "@/components/project";
 import { ChevronDown, LinkIcon } from "lucide-react";
-import { CldImage, getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Link from "next/link";
 
 const ProjectLink = (url: string) => (

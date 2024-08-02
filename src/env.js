@@ -10,6 +10,7 @@ export const env = createEnv({
 		NODE_ENV: z.enum(["development", "test", "production"]),
 		RESUME_URL: z.string(),
 		CLOUDINARY_API_SECRET: z.string(),
+		URL: z.string(),
 	},
 
 	/**
@@ -32,6 +33,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
 		NEXT_PUBLIC_CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
 		CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+		URL: process.env.URL,
 	},
 	/**
 	 * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
