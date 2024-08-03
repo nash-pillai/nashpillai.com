@@ -3,7 +3,7 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import RootLayoutClient from "./layoutClient";
-import { getCldImageUrl } from "next-cloudinary";
+import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import { env } from "@/env";
 
 export const metadata: Metadata = {
@@ -16,6 +16,12 @@ export const metadata: Metadata = {
 		title: "Nash Pillai",
 		description: "#1 coder",
 		url: env.URL,
+		images: {
+			url: getCldOgImageUrl({ src: "nashpillai.com/preview" }),
+			width: 1200,
+			height: 627,
+			alt: "An image of a mountain",
+		},
 	},
 };
 
