@@ -38,7 +38,7 @@ export function Project({
 					<div className="flex grow flex-col p-2 md:p-4 lg:p-6">
 						<p
 							ref={targetRef}
-							className="mb-4 flex flex-wrap text-2xl font-bold text-black/20 md:text-3xl lg:text-4xl xl:text-5xl dark:text-white/20"
+							className="mb-4 flex flex-wrap text-2xl font-bold text-white/20 md:text-3xl lg:text-4xl xl:text-5xl"
 						>
 							{words.map((word, i) => {
 								const start = i / words.length;
