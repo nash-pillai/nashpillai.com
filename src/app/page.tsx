@@ -5,6 +5,8 @@ import { Project } from "@/components/project";
 import { ChevronDown, LinkIcon } from "lucide-react";
 import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
 import Link from "next/link";
+import { env } from "process";
+import { type WebSite, type WithContext } from "schema-dts";
 
 const ProjectLink = (url: string) => (
 	<Link href={`https://${url}/`} className="flex items-center hover:underline" target="_blank">
@@ -50,9 +52,20 @@ const projects = [
 	},
 ];
 
+const jsonLd: WithContext<WebSite> = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	url: env.URL,
+	name: "Nash Pillai",
+	description: "Nash Pillai's personal website",
+	image: getCldImageUrl({ src: "nashpillai.com/preview" }),
+	sameAs: ["https://www.linkedin.com/in/nash-pillai/", "https://github.com/nash-pillai/"],
+};
+
 export default function HomePage() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-center text-white">
+			<JsonLd data={jsonLd} />
 			<section className="w-full bg-gradient-to-b from-[#2e026d] to-[#15162c]">
 				<div className="container flex h-screen flex-col items-center justify-center gap-12 px-4 py-16">
 					<WordPullUp
