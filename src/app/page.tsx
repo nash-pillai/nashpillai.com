@@ -126,6 +126,30 @@ export default function HomePage() {
 					<Project title={project.title} index={index} body={project.body} media={project.media} />
 				</section>
 			))}
+			<section className="w-full bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+				<div className="container flex h-screen flex-col items-center justify-center gap-12 px-4 py-16">
+					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+						<Link
+							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+							href="/nash.gpg"
+							target="_blank"
+							data-aos="fade-up"
+						>
+							<h3 className="text-2xl font-bold">My GPG public key →</h3>
+							<div className="break-all text-lg">F10A5FFB4E9B82863D31E7E76508E71EC5318FAD</div>
+						</Link>
+						<Link
+							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+							data-aos="fade-up"
+							href="/about"
+							target="_blank"
+						>
+							<h3 className="text-2xl font-bold">My Dark Web Site →</h3>
+							<div className="text-lg">Onion v3 address</div>
+						</Link>
+					</div>
+				</div>
+			</section>
 		</main>
 	);
 }
