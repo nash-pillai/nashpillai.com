@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+import { JsonLd } from "@/components/jsonLd";
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Project } from "@/components/project";
