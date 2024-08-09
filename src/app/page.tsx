@@ -2,56 +2,12 @@
 import { JsonLd } from "@/components/jsonLd";
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import WordPullUp from "@/components/magicui/word-pull-up";
-import { Project } from "@/components/project";
-import { ChevronDown, LinkIcon } from "lucide-react";
-import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
+import { ChevronDown } from "lucide-react";
+import { getCldImageUrl } from "next-cloudinary";
 import Link from "next/link";
 import { env } from "process";
 import { type WebSite, type WithContext } from "schema-dts";
-
-const ProjectLink = (url: string) => (
-	<Link href={`https://${url}/`} className="flex items-center hover:underline" target="_blank">
-		<LinkIcon height={18} />
-		{url}
-	</Link>
-);
-const projects = [
-	{
-		title: "Imagine an site that lets you track bills going through Congress.",
-		body: [
-			ProjectLink("progressincongress.org"),
-			"Won the Congressional App Challenge and was demoed at the US Capitol",
-			"Built with Next.js and TailwindCSS",
-		],
-		media: <img src={getCldImageUrl({ src: `nashpillai.com/congress${1}` })} />,
-		gradient: "from-[#15162c] to-[#2e026d]",
-	},
-	{
-		title: "Imagine an site that lets you manage tens of thousands of parts.",
-		body: [ProjectLink("inventory.jaybots.org"), "Built with Next.js and TailwindCSS"],
-		gradient: "from-[#2e026d] to-[#15162c]",
-	},
-	{
-		title: "Imagine an site where you can talk to AI tutors trained specifically for your courses",
-		body: [ProjectLink("deaplearning.com"), "Over 200k students impacted", "Built with Next.js and TailwindCSS"],
-		gradient: "from-[#15162c] to-[#2e026d]",
-		media: <video src={getCldVideoUrl({ src: "nashpillai.com/deap1" })} autoPlay className="rounded-lg" />,
-	},
-	{
-		title: "Imagine an site where you can stay informed and fight to defend the environment",
-		body: [ProjectLink("tedinitiative.org"), "Built with Next.js and TailwindCSS"],
-		gradient: "from-[#2e026d] to-[#15162c]",
-	},
-	{
-		title: "Imagine an site where you can learn statistics interactively",
-		body: [
-			ProjectLink("stapplet.com"),
-			"Over 100k students impacted",
-			"Improved by me to have more customizability and more accurate graphs",
-		],
-		gradient: "from-[#15162c] to-[#2e026d]",
-	},
-];
+import ProjectsList from "@/components/projectsList";
 
 const jsonLd: WithContext<WebSite> = {
 	"@context": "https://schema.org",
@@ -121,11 +77,7 @@ export default function HomePage() {
 					</Link>
 				</div>
 			</section>
-			{projects.map((project, index) => (
-				<section key={index} className={`w-full bg-gradient-to-b ${project.gradient}`}>
-					<Project title={project.title} index={index} body={project.body} media={project.media} />
-				</section>
-			))}
+			<ProjectsList />
 			<section className="w-full bg-gradient-to-b from-[#2e026d] to-[#15162c]">
 				<div className="container flex h-screen flex-col items-center justify-center gap-12 px-4 py-16">
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">

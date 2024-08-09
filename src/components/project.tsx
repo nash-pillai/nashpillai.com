@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { Word } from "./magicui/text-reveal";
-import { clamp, motion, useScroll, useTransform } from "framer-motion";
+import { clamp, motion, type MotionValue, useTransform } from "framer-motion";
 import BoxReveal from "./magicui/box-reveal";
 
 export function Project({
@@ -10,22 +10,26 @@ export function Project({
 	index,
 	body = [],
 	media,
+	parentScroll,
 }: {
 	title: string;
 	index: number;
 	body?: (JSX.Element | string)[];
 	media?: JSX.Element | string;
+	parentScroll: MotionValue<number>;
 }) {
 	const targetRef = useRef<HTMLDivElement | null>(null);
 
-	const { scrollYProgress } = useScroll({ target: targetRef });
+	const scrollYProgress = useTransform(parentScroll, [0, index, index + 1, index + 2], [0, 0, 1, 1]);
 
 	const words = title.split(" ");
 	const titleProgress = useTransform(scrollYProgress, (x) => clamp(0, 1, x * 3));
 
 	const [showBox, setShowBox] = useState(false);
 
-	scrollYProgress.on("change", (v) => setShowBox(v > 0.35));
+	scrollYProgress.on("change", (v) => {
+		setShowBox(v > 0.35);
+	});
 
 	return (
 		<div

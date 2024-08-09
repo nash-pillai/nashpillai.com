@@ -9,7 +9,7 @@ import { env } from "@/env";
 export const metadata: Metadata = {
 	title: "Nash Pillai",
 	description: "#1 coder",
-	icons: [{ rel: "icon", url: getCldImageUrl({ src: "nashpillai.com/logo" }) }],
+	icons: [{ rel: "icon", url: getCldImageUrl({ src: "nashpillai.com/logo.png", crop: "thumb", gravity: "face" }) }],
 	openGraph: {
 		type: "website",
 		siteName: "Nash Pillai",
