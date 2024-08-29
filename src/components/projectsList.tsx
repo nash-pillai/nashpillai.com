@@ -15,13 +15,13 @@ const ProjectLink = (url: string) => (
 );
 const projects = [
 	{
-		title: "Imagine an site where you can talk to AI tutors trained specifically for your courses",
+		title: "Imagine a site where you can talk to AI tutors trained specifically for your courses",
 		body: [ProjectLink("deaplearning.com"), "Over 200k students impacted", "Built with Next.js and TailwindCSS"],
 		gradient: ["#15162c", "#2e026d"] as [string, string],
 		media: <video src={getCldVideoUrl({ src: "nashpillai.com/deap1" })} autoPlay loop muted className="rounded-lg" />,
 	},
 	{
-		title: "Imagine an site that lets you track bills going through Congress.",
+		title: "Imagine a site that lets you track bills going through Congress.",
 		body: [
 			ProjectLink("progressincongress.org"),
 			"Won the Congressional App Challenge and was demoed at the US Capitol",
@@ -32,13 +32,13 @@ const projects = [
 	},
 
 	{
-		title: "Imagine an site where you can stay informed and fight to defend the environment",
+		title: "Imagine a site where you can stay informed and fight to defend the environment",
 		body: [ProjectLink("tednitiative.org"), "Built with Next.js and TailwindCSS"],
 		media: <img src={getCldImageUrl({ src: `nashpillai.com/tedi` })} />,
 		gradient: ["hsl(149, 100%, 19%)", "#81b141"] as [string, string],
 	},
 	{
-		title: "Imagine an site where you can learn statistics interactively",
+		title: "Imagine a site where you can learn statistics interactively",
 		body: [
 			ProjectLink("stapplet.com"),
 			"Over 50k students impacted",
@@ -47,7 +47,7 @@ const projects = [
 		gradient: ["#DD0088", "#993333"] as [string, string],
 	},
 	{
-		title: "Imagine an site that lets you manage tens of thousands of parts.",
+		title: "Imagine a site that lets you manage tens of thousands of parts.",
 		body: [ProjectLink("inventory.jaybots.org"), "Built with Next.js and TailwindCSS"],
 		gradient: ["#15162c", "#2e026d"] as [string, string],
 	},
