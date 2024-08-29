@@ -27,14 +27,14 @@ const projects = [
 			"Won the Congressional App Challenge and was demoed at the US Capitol",
 			"Built with Next.js and TailwindCSS",
 		],
-		media: <img src={getCldImageUrl({ src: `nashpillai.com/congress${1}` })} />,
+		media: <img src={getCldImageUrl({ src: `nashpillai.com/congress${1}` })} className="rounded-lg" />,
 		gradient: ["#0000FF", "#FF0088"] as [string, string],
 	},
 
 	{
 		title: "Imagine a site where you can stay informed and fight to defend the environment",
 		body: [ProjectLink("tednitiative.org"), "Built with Next.js and TailwindCSS"],
-		media: <img src={getCldImageUrl({ src: `nashpillai.com/tedi` })} />,
+		media: <img src={getCldImageUrl({ src: `nashpillai.com/tedi` })} className="rounded-lg" />,
 		gradient: ["hsl(149, 100%, 19%)", "#81b141"] as [string, string],
 	},
 	{
@@ -49,7 +49,7 @@ const projects = [
 	{
 		title: "Imagine a site that lets you manage tens of thousands of parts.",
 		body: [ProjectLink("inventory.jaybots.org"), "Built with Next.js and TailwindCSS"],
-		media: <img src={getCldImageUrl({ src: `nashpillai.com/inventory` })} />,
+		media: <img src={getCldImageUrl({ src: `nashpillai.com/inventory` })} className="rounded-lg" />,
 		gradient: ["#15162c", "#2e026d"] as [string, string],
 	},
 ];
