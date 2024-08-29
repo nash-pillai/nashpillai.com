@@ -49,6 +49,7 @@ const projects = [
 	{
 		title: "Imagine a site that lets you manage tens of thousands of parts.",
 		body: [ProjectLink("inventory.jaybots.org"), "Built with Next.js and TailwindCSS"],
+		media: <img src={getCldImageUrl({ src: `nashpillai.com/inventory` })} />,
 		gradient: ["#15162c", "#2e026d"] as [string, string],
 	},
 ];
