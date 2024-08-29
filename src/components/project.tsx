@@ -38,7 +38,9 @@ export function Project({
 			id={`portfolio${index + 1}`}
 		>
 			<div ref={targetRef} className="relative z-0 h-[200vh]">
-				<div className="sticky top-0 mx-auto flex h-[50%] max-w-6xl flex-col items-center gap-8 bg-transparent px-[1rem] py-[5rem] md:flex-row">
+				<div
+					className={`sticky top-0 mx-auto flex h-[50%] max-w-6xl flex-col items-center gap-8 bg-transparent px-[1rem] py-[5rem] ${index % 2 ? "md:flex-row-reverse" : "md:flex-row"}`}
+				>
 					<div className="flex grow flex-col p-2 md:p-4 lg:p-6">
 						<p
 							ref={targetRef}
