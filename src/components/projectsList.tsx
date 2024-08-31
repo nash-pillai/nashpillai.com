@@ -17,8 +17,9 @@ const projects = [
 	{
 		title: "Imagine a site where you can talk to AI tutors trained specifically for your courses",
 		body: [ProjectLink("deaplearning.com"), "Over 200k students impacted", "Built with Next.js and TailwindCSS"],
-		gradient: ["#15162c", "#2e026d"] as [string, string],
 		media: <video src={getCldVideoUrl({ src: "nashpillai.com/deap1" })} autoPlay loop muted className="rounded-lg" />,
+		gradient: ["#15162c", "#2e026d"] as [string, string],
+		boxColor: "#5046e6",
 	},
 	{
 		title: "Imagine a site that lets you track bills going through Congress.",
@@ -29,6 +30,7 @@ const projects = [
 		],
 		media: <img src={getCldImageUrl({ src: `nashpillai.com/congress${1}` })} className="rounded-lg" />,
 		gradient: ["#0000FF", "#FF0088"] as [string, string],
+		boxColor: "#00FFFF",
 	},
 
 	{
@@ -36,6 +38,7 @@ const projects = [
 		body: [ProjectLink("tednitiative.org"), "Built with Next.js and TailwindCSS"],
 		media: <img src={getCldImageUrl({ src: `nashpillai.com/tedi` })} className="rounded-lg" />,
 		gradient: ["hsl(149, 100%, 19%)", "#81b141"] as [string, string],
+		boxColor: "#00FFFF",
 	},
 	{
 		title: "Imagine a site where you can learn statistics interactively",
@@ -45,12 +48,14 @@ const projects = [
 			"Improved by me to have more customizability and more accurate graphs",
 		],
 		gradient: ["#DD0088", "#993333"] as [string, string],
+		boxColor: "#81b141",
 	},
 	{
 		title: "Imagine a site that lets you manage tens of thousands of parts.",
 		body: [ProjectLink("inventory.jaybots.org"), "Built with Next.js and TailwindCSS"],
 		media: <img src={getCldImageUrl({ src: `nashpillai.com/inventory` })} className="rounded-lg" />,
 		gradient: ["#15162c", "#2e026d"] as [string, string],
+		boxColor: "#5046e6",
 	},
 ];
 const gradientPos = (i: number) => `${clamp(0, projects.length * 200, i * 200 + 50)}vh`;
@@ -85,6 +90,7 @@ export default function ProjectsList() {
 					body={project.body}
 					media={project.media}
 					parentScroll={scaledProgress}
+					boxColor={project.boxColor}
 				/>
 			))}
 		</section>

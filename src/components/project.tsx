@@ -11,12 +11,14 @@ export function Project({
 	body = [],
 	media,
 	parentScroll,
+	boxColor,
 }: {
 	title: string;
 	index: number;
 	body?: (JSX.Element | string)[];
 	media?: JSX.Element | string;
 	parentScroll: MotionValue<number>;
+	boxColor?: string;
 }) {
 	const targetRef = useRef<HTMLDivElement | null>(null);
 
@@ -60,7 +62,7 @@ export function Project({
 							<BoxReveal
 								key={i}
 								width="100%"
-								boxColor="#5046e6"
+								boxColor={boxColor}
 								duration={0.4}
 								offset={i * 0.2}
 								className={`my-1 ${!showBox && "opacity-0"}`}
