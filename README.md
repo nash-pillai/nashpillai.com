@@ -17,3 +17,7 @@ I recommend using [Ionos](https://www.ionos.com/) to get a ".com" domain for jus
 ## Email
 
 I currently use Cloudflare email forwarding to forward emails to my personal email. I will be setting up a self hosted email server soon.
+
+## License
+
+This project is open source and available under the GPL-3.0 License so you can use it as long as derivative works are also open source (credit is appreciated).
