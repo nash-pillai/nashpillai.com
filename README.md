@@ -1,27 +1,19 @@
-# Create T3 App
+# My personal website
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is the first personal website I've ever made so I made it pretty simple. I'll make something more complex in the future.
 
-## What's next? How do I make an app with this?
+## Hosting
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+It's hosted with Vercel and you can see it live at [nashpillai.com](https://nashpillai.com/).
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Tech Stack
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+I started with the t3 template which uses [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com). I also used [AOS](https://michalsnik.github.io/aos/) and [Framer Motion](https://www.framer.com/motion/) for fancy animations.
 
-## Learn More
+## Registrar
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+I recommend using [Ionos](https://www.ionos.com/) to get a ".com" domain for just $1 for the first year. Then, after 60 days you can transfer it to Cloudflare and pay $10.44/year.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Email
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+I currently use Cloudflare email forwarding to forward emails to my personal email. I will be setting up a self hosted email server soon.
