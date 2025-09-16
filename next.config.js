@@ -13,7 +13,10 @@ const config = {
 		];
 	},
 	async rewrites() {
-		return [{ source: "/resume", destination: env.RESUME_URL }];
+		return [
+			{ source: "/resume", destination: env.RESUME_URL },
+			{ source: "/headshot", destination: env.HEADSHOT_URL },
+		];
 	},
 };
 
