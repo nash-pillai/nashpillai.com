@@ -9,7 +9,8 @@ const config = {
 	async redirects() {
 		return [
 			{ source: "/about", destination: "https://youtu.be/dQw4w9WgXcQs", permanent: false },
-			{ source: "/linkedin", destination: "https://linkedin.com/in/nash-pillai", permanent: false },
+			{ source: "/linkedin", destination: "https://linkedin.com/in/nash-pillai", permanent: true },
+			{ source: "/podcast/tropicana", destination: "https://www.tropicana.com/products/", permanent: true },
 		];
 	},
 	async rewrites() {
