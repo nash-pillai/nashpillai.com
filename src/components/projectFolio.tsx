@@ -59,7 +59,7 @@ function ProjectEntry({ project, cormorantClass }: { project: ProjectItem; cormo
       </div>
 
       {/* Media */}
-      {(project.imageSrc || project.videoSrc) && (
+      {(project.imageSrc ?? project.videoSrc) && (
         <div className="overflow-hidden">
           <motion.div style={{ y: imageY }}>
             {project.videoSrc ? (
