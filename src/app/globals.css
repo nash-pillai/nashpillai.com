@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--bg: #0a0e14;
+	--bg-alt: #0d1117;
+	--text: #b3b1ad;
+	--accent-blue: #59c2ff;
+	--accent-green: #aad94c;
+	--accent-purple: #d2a6ff;
+	--accent-orange: #ff8f40;
+	--muted: #565b66;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-track {
+	background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--accent-blue);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #7dd3fc;
+}
+
+/* Selection */
+::selection {
+	background: var(--accent-blue);
+	color: #fff;
+}
+
+/* Scanlines — extremely subtle */
+body::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 9999;
+	background: repeating-linear-gradient(
+		0deg,
+		transparent,
+		transparent 2px,
+		rgba(0, 0, 0, 0.015) 2px,
+		rgba(0, 0, 0, 0.015) 4px
+	);
+}
+
+/* Blinking cursor for the header prompt */
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+.cursor-blink {
+	animation: blink 1s step-end infinite;
+}
+
+/* Section alt background */
+.bg-alt {
+	background-color: var(--bg-alt);
+}
+
+/* Fade in for project images */
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+/* Link hover transitions */
+a {
+	transition: color 0.15s ease;
+}
