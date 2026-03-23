@@ -57,7 +57,8 @@ export function TimelineItem({
 
       {/* Date label - rotated on desktop */}
       <div
-        className={`hidden md:block absolute md:top-0 ${isEven ? "md:right-[52%]" : "md:left-[52%]"}`}
+        className={`hidden md:block absolute ${isEven ? "md:right-[52%] md:pr-12 md:text-right" : "md:left-[52%] md:pl-12"}`}
+        style={{ top: 0, zIndex: 20 }}
       >
         <span
           className="inline-block text-sm font-bold uppercase tracking-widest text-[#FFE600]"
@@ -69,7 +70,7 @@ export function TimelineItem({
 
       {/* Content */}
       <div
-        className={`ml-14 w-full md:ml-0 ${isEven ? "md:mr-[52%] md:pr-12" : "md:ml-[52%] md:pl-12"}`}
+        className={`ml-14 w-full md:ml-0 ${isEven ? "md:mr-[52%] md:pr-12" : "md:ml-[52%] md:pl-12"} md:pt-8`}
       >
         <span
           className="mb-2 block text-xs font-bold uppercase tracking-widest text-[#FFE600] md:hidden"

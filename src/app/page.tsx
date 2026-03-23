@@ -162,7 +162,7 @@ export default function HomePage() {
 									4.0 GPA. 8 years programming. NixOS user.
 								</p>
 								<div className="mt-4 flex flex-wrap gap-3">
-									{["Fishkill, NY", "English", "Tamil", "Spanish"].map((tag) => (
+									{["Fishkill, NY"].map((tag) => (
 										<span
 											key={tag}
 											className="border-[3px] border-[#0A0A0A] px-3 py-1 text-sm font-bold uppercase tracking-wider text-[#0A0A0A]"
@@ -589,7 +589,7 @@ export default function HomePage() {
 					{/* Footer */}
 					<div className="mt-24 border-t-[4px] border-[#F5F0E8]/10 pt-8 text-center">
 						<p className="text-sm text-[#F5F0E8]/30" style={{ fontFamily: "var(--font-dm-sans)" }}>
-							Nash Pillai &mdash; Built with Next.js, Tailwind, and aggressive design choices.
+							Nash Pillai
 						</p>
 					</div>
 				</div>

@@ -28,7 +28,7 @@ export function HeroTagline() {
       initial={{ opacity: 0, x: -40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="vertical-text absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold uppercase tracking-[0.3em] text-[#0A0A0A]/60 md:left-8 md:text-base"
+      className="vertical-text absolute -left-2 top-1/2 z-30 -translate-y-1/2 text-sm font-bold uppercase tracking-[0.3em] text-[#0A0A0A]/60 md:left-2 md:text-base"
       style={{ fontFamily: "var(--font-dm)" }}
     >
       Developer / Security / AI
