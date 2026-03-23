@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--color-red: #e63322;
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-gray-light: #f2f2f2;
+	--color-gray-medium: #999999;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: var(--color-white);
+	color: var(--color-black);
+}
+
+/* Swiss Grid System */
+.swiss-grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 1.5rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+/* Section dividers */
+.swiss-rule {
+	border: none;
+	border-top: 1px solid var(--color-black);
+	width: 100%;
+	margin: 0;
+}
+
+/* Label style - uppercase tracking */
+.swiss-label {
+	font-weight: 500;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	color: var(--color-gray-medium);
+}
+
+/* Section number */
+.swiss-section-number {
+	font-weight: 800;
+	color: var(--color-red);
+	line-height: 0.85;
+}
+
+/* No dark mode overrides - pure Swiss palette */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: var(--color-white);
+		color: var(--color-black);
+	}
+}
+
+/* Selection color */
+::selection {
+	background-color: var(--color-red);
+	color: var(--color-white);
+}
