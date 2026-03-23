@@ -1,3 +1,127 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --off-white: #F5F0E8;
+  --electric-blue: #0047FF;
+  --hot-pink: #FF0054;
+  --yellow: #FFE600;
+  --black: #0A0A0A;
+  --font-bebas: var(--font-bebas-neue);
+  --font-dm: var(--font-dm-sans);
+}
+
+/* Diagonal stripe pattern */
+.stripe-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+}
+
+.stripe-pattern-light {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.05) 20px
+  );
+}
+
+/* Dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dot-pattern-light {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Brutalist shadow for hover effects */
+.brutalist-shadow {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.brutalist-shadow:hover {
+  box-shadow: 8px 8px 0 var(--black);
+  transform: translate(-2px, -2px);
+}
+
+.brutalist-shadow-white:hover {
+  box-shadow: 8px 8px 0 #fff;
+  transform: translate(-2px, -2px);
+}
+
+/* Invert link hover */
+.invert-hover {
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+/* Rotated text utility */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: var(--electric-blue);
+  color: white;
+}
+
+/* Cross-hatch pattern for decorative elements */
+.crosshatch-pattern {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.06) 4px,
+      rgba(0, 0, 0, 0.06) 5px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 4px,
+      rgba(0, 0, 0, 0.06) 4px,
+      rgba(0, 0, 0, 0.06) 5px
+    );
+}
+
+/* Marquee animation for skills */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Grid background for hero */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.grid-bg-light {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
