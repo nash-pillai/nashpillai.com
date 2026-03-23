@@ -1,26 +1,31 @@
 import Link from "next/link";
+import { Cormorant_Garamond } from "next/font/google";
+
+const cormorant = Cormorant_Garamond({
+	weight: ["300", "400"],
+	style: ["normal", "italic"],
+	subsets: ["latin"],
+	display: "swap",
+});
 
 export const metadata = {
-	title: "404: Page Not Found",
-	description: "This page doesn't exist",
+	title: "404 -- Nash Pillai",
+	description: "This page does not exist.",
 };
 
 export default function NotFound() {
 	return (
-		<main className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-			<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-				<div className="pb-12 pt-32 md:pb-20 md:pt-40">
-					<div className="mb-12 flex grow flex-col items-center lg:mb-0 lg:mt-20 lg:items-start">
-						<h1 className="mb-8 text-center text-5xl font-extrabold tracking-tight text-white lg:text-left">
-							404: Page Not Found
-						</h1>
-						<p>{"This page doesn't seem to exist. Perhaps you mistyped the URL?"}</p>
-						<Link href="/" className="my-4 rounded-md bg-purple-700 px-2 py-1 hover:bg-purple-600">
-							Back to the homepage!
-						</Link>
-					</div>
-				</div>
-			</div>
+		<main className="flex min-h-screen flex-col items-center justify-center bg-[#0C0B09] px-6">
+			<h1 className={`${cormorant.className} mb-4 text-[8vw] font-light italic leading-none text-[#E8E2D6]`}>
+				404
+			</h1>
+			<p className="mb-8 text-sm text-[#8B7D5C]">This page does not exist.</p>
+			<Link
+				href="/"
+				className="text-xs uppercase tracking-[0.25em] text-[#8B7D5C] transition-colors duration-300 hover:text-[#C45D2C]"
+			>
+				Return home
+			</Link>
 		</main>
 	);
 }
