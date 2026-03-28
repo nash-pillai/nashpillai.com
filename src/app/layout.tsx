@@ -27,8 +27,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${GeistSans.variable} scroll-smooth dark:bg-stone-900 dark:text-gray-100`}>
-			<body>
+		<html lang="en" className={`${GeistSans.variable} scroll-smooth`}>
+			<body className="bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-800 selection:text-zinc-200 min-h-screen">
 				<RootLayoutClient>{children}</RootLayoutClient>
 			</body>
 		</html>

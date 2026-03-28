@@ -7,19 +7,29 @@ export const metadata = {
 
 export default function NotFound() {
 	return (
-		<main className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-			<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-				<div className="pb-12 pt-32 md:pb-20 md:pt-40">
-					<div className="mb-12 flex grow flex-col items-center lg:mb-0 lg:mt-20 lg:items-start">
-						<h1 className="mb-8 text-center text-5xl font-extrabold tracking-tight text-white lg:text-left">
-							404: Page Not Found
-						</h1>
-						<p>{"This page doesn't seem to exist. Perhaps you mistyped the URL?"}</p>
-						<Link href="/" className="my-4 rounded-md bg-purple-700 px-2 py-1 hover:bg-purple-600">
-							Back to the homepage!
-						</Link>
-					</div>
+		<main className="min-h-screen flex flex-col items-center justify-center px-6 selection:bg-zinc-800 selection:text-zinc-200 bg-zinc-950 text-zinc-100">
+			<div className="space-y-6 text-center">
+				<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl font-mono text-zinc-500 uppercase tracking-widest">
+					404
+				</h1>
+				<div className="space-y-2">
+					<p className="text-lg text-zinc-400">Page Not Found</p>
+					<p className="text-sm text-zinc-500 font-mono tracking-tight">
+						THE REQUESTED RESOURCE COULD NOT BE LOCATED.
+					</p>
 				</div>
+				<div className="pt-8">
+					<Link
+						href="/"
+						className="inline-flex items-center px-6 py-3 bg-zinc-100 text-zinc-950 font-medium text-sm rounded-lg hover:bg-white transition-all transform active:scale-95 shadow-lg shadow-black/20"
+					>
+						Return Home
+					</Link>
+				</div>
+			</div>
+			
+			<div className="absolute bottom-12 text-[10px] font-mono text-zinc-800 uppercase tracking-[0.2em] select-none">
+				Error: 0xDEADBEEF
 			</div>
 		</main>
 	);
