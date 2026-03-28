@@ -1,5 +1,4 @@
 import { JsonLd } from "@/components/jsonLd";
-import { TerminalPrompt } from "@/components/TerminalPrompt";
 import { TerminalSection } from "@/components/TerminalSection";
 import { TerminalWindow } from "@/components/TerminalWindow";
 import Link from "next/link";
@@ -69,7 +68,7 @@ export default function HomePage() {
 				<TerminalWindow title="kernel-config.nix">
 					<TerminalSection title="Introduction" command="whoami" dir="/etc">
 						<p className="text-gray-300 leading-relaxed max-w-3xl">
-							Hello, I'm Nash. I used to use Arch, btw, but now I use NixOS as my primary operating system.
+							Hello, I&apos;m Nash. I used to use Arch, btw, but now I use NixOS as my primary operating system.
 							I have 8 years of programming experience and am particularly passionate about higher-level
 							mathematics, cybersecurity, and systems architecture. Currently pursuing Honors Computer
 							Science at Georgia Tech with concentrations in AI and Cybersecurity.
@@ -104,7 +103,7 @@ export default function HomePage() {
 								company="John Jay Robotics (Jaybots FTC #16700)"
 								period="June 2022 – May 2025"
 								bullets={[
-									"Led team to World Championships, winning #1 Judge's Choice",
+									"Led team to World Championships, winning #1 Judge&apos;s Choice",
 									"Implemented Kalman filters for sensor fusion and noise minimization",
 									"Engineered production-grade robot control software in Kotlin/Java",
 								]}
