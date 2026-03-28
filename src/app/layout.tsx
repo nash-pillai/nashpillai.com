@@ -1,10 +1,12 @@
 import "./globals.css";
 
-import { GeistSans } from "geist/font/sans";
+import { EB_Garamond } from "next/font/google";
 import { type Metadata } from "next";
 import RootLayoutClient from "./layoutClient";
 import { getCldImageUrl, getCldOgImageUrl } from "next-cloudinary";
 import { env } from "@/env";
+
+const ebGaramond = EB_Garamond({ subsets: ["latin"], variable: "--font-eb-garamond" });
 
 export const metadata: Metadata = {
 	title: "Nash Pillai",
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${GeistSans.variable} scroll-smooth dark:bg-stone-900 dark:text-gray-100`}>
+		<html lang="en" className={`${ebGaramond.variable} scroll-smooth bg-[#fdfdfc] text-black`}>
 			<body>
 				<RootLayoutClient>{children}</RootLayoutClient>
 			</body>

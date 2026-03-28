@@ -1,13 +1,11 @@
-/* eslint-disable react/jsx-key */
+/* eslint-disable react/no-unescaped-entities */
 import { JsonLd } from "@/components/jsonLd";
-import GradualSpacing from "@/components/magicui/gradual-spacing";
-import WordPullUp from "@/components/magicui/word-pull-up";
-import { ChevronDown } from "lucide-react";
-import { getCldImageUrl } from "next-cloudinary";
+import { ExperienceItem } from "@/components/ExperienceItem";
+import { PaperSection } from "@/components/PaperSection";
 import Link from "next/link";
-import { env } from "process";
+import { env } from "@/env";
 import { type WebSite, type WithContext } from "schema-dts";
-import ProjectsList from "@/components/projectsList";
+import { getCldImageUrl } from "next-cloudinary";
 
 const jsonLd: WithContext<WebSite> = {
 	"@context": "https://schema.org",
@@ -21,87 +19,136 @@ const jsonLd: WithContext<WebSite> = {
 
 export default function HomePage() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-center text-white">
+		<main className="paper-container">
 			<JsonLd data={jsonLd} />
-			<section className="w-full bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-				<div className="container flex h-screen flex-col items-center justify-center gap-12 px-4 py-16">
-					<WordPullUp
-						words={["Hi!", " ", "I'm", <span className="text-[hsl(280,100%,70%)]">Nash</span>, "!"]}
-						className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]"
-					/>
-					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-						<Link
-							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-							href="https://www.linkedin.com/in/nash-pillai/"
-							target="_blank"
-							data-aos="fade-right"
-						>
-							<h3 className="text-2xl font-bold">My Linkedin →</h3>
-							<GradualSpacing initialDelay={1} className="text-lg" text="Keep up with my latest projects." />
-						</Link>
-						<Link
-							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-							href="https://github.com/nash-pillai/"
-							target="_blank"
-							data-aos="fade-left"
-						>
-							<h3 className="text-2xl font-bold">My Github →</h3>
-							<GradualSpacing initialDelay={1} className="text-lg" text="See all my other cool websites." />
-						</Link>
-						<Link
-							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-							href="mailto:nash.pillai@protonmail.com"
-							target="_blank"
-							data-aos="fade-right"
-						>
-							<h3 className="text-2xl font-bold">Contact Me →</h3>
-							<GradualSpacing initialDelay={1} className="text-lg" text="Send me an email." />
-						</Link>
-						<Link
-							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-							href="/resume"
-							target="_blank"
-							data-aos="fade-left"
-						>
-							<h3 className="text-2xl font-bold">My Resume →</h3>
-							<GradualSpacing initialDelay={1} className="text-lg" text="A quick sample of my work." />
-						</Link>
-					</div>
-					<Link href="#portfolio1" data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1000">
-						<div className="group flex max-w-xl flex-col gap-4 rounded-xl bg-white/0 p-4 text-white transition duration-300 ease-in-out hover:bg-white/5">
-							<h3 className="text-2xl font-bold">{"Take a tour of what I've made"}</h3>
-							<div className="m-auto text-lg transition-transform duration-700 ease-in-out group-hover:translate-y-3">
-								<ChevronDown size={32} />
-							</div>
-						</div>
-					</Link>
+			
+			<header className="mb-12">
+				<h1 className="paper-title">Nash Pillai</h1>
+				<p className="paper-subtitle">Honors CS @ Georgia Tech</p>
+				<div className="paper-contact">
+					<span>Fishkill, NY</span>
+					<span className="mx-2">·</span>
+					<Link href="mailto:nash.pillai@protonmail.com">nash.pillai@protonmail.com</Link>
+					<span className="mx-2">·</span>
+					<Link href="https://linkedin.com/in/nash-pillai/" target="_blank">LinkedIn</Link>
+					<span className="mx-2">·</span>
+					<Link href="https://github.com/nash-pillai/" target="_blank">GitHub</Link>
 				</div>
+			</header>
+
+			<section className="paper-abstract">
+				<p className="paper-abstract-title">Abstract</p>
+				<p>
+					I am a developer and researcher focused on higher-level mathematics and cybersecurity.
+					With eight years of programming experience, I have developed large-scale educational platforms 
+					impacting hundreds of thousands of students. My work spans from low-level systems programming 
+					and reverse engineering to high-level web infrastructure. Currently, I am pursuing my Bachelor of Science 
+					in Computer Science at the Georgia Institute of Technology, where I serve as the CTF Team Captain for GreyHat.
+				</p>
 			</section>
-			<ProjectsList />
-			<section className="w-full bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-				<div className="container flex h-screen flex-col items-center justify-center gap-12 px-4 py-16">
-					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-						<Link
-							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-							href="/nash.gpg"
-							target="_blank"
-							data-aos="fade-up"
-						>
-							<h3 className="text-2xl font-bold">My GPG public key →</h3>
-							<div className="break-all text-lg">F10A5FFB4E9B82863D31E7E76508E71EC5318FAD</div>
-						</Link>
-						<Link
-							className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-							data-aos="fade-up"
-							href="/about"
-							target="_blank"
-						>
-							<h3 className="text-2xl font-bold">My Darknet Site →</h3>
-							<div className="text-lg">Onion v3 address</div>
-						</Link>
-					</div>
+
+			<PaperSection title="Experience">
+				<ExperienceItem 
+					title="GreyHat @ Georgia Tech" 
+					subtitle="CTF Team Captain" 
+					date="February 2026 – Present" 
+					location="Atlanta, GA"
+				>
+					<li>Lead the competitive Capture The Flag (CTF) team in international competitions.</li>
+					<li>Direct technical training sessions focused on reverse engineering, binary exploitation, and cryptography.</li>
+				</ExperienceItem>
+
+				<ExperienceItem 
+					title="Ember Learning" 
+					subtitle="Director of Web Development" 
+					date="August 2023 – Present"
+				>
+					<li>Created an AP Exam Simulator for the Ultimate Review Packet, generating $400k in revenue and serving 160k students.</li>
+					<li>Led a team of developers to build deaplearning.com, providing custom-trained AI tutors for AP courses, reaching 300k users and $10k ARR.</li>
+					<li>Managed cloud infrastructure on Railway and Azure for high-traffic educational services and AI model deployment.</li>
+					<li>Built emberlearning.org, implementing AI teaching assistants capable of scaling to entire school districts.</li>
+				</ExperienceItem>
+
+				<ExperienceItem 
+					title="Stapplet" 
+					subtitle="Independent Contractor" 
+					date="June 2025 – Present"
+				>
+					<li>Maintained and optimized an interactive AP Statistics platform with over 100k daily active users.</li>
+					<li>Identified and patched a critical privilege escalation vulnerability, securing the platform against unauthorized administrative access.</li>
+					<li>Engineered a modern React-based reimplementation of the site's core interactive components.</li>
+				</ExperienceItem>
+
+				<ExperienceItem 
+					title="John Jay Robotics Club" 
+					subtitle="President & Director of Programming" 
+					date="June 2022 – May 2025"
+				>
+					<li>Led the team to its first-ever World Championship qualification in club history.</li>
+					<li>Developed a comprehensive inventory management system with administrative controls and automated supplier data scraping.</li>
+					<li>Implemented custom I2C drivers and an event loop for real-time robotic control systems.</li>
+					<li>Designed computer vision pipelines using OpenCV to enable fully autonomous scoring capabilities.</li>
+				</ExperienceItem>
+
+				<ExperienceItem 
+					title="The Environmental Defense Initiative" 
+					subtitle="Chief Technology Officer" 
+					date="July 2024 – October 2025"
+				/>
+			</PaperSection>
+
+			<PaperSection title="Education">
+				<ExperienceItem 
+					title="Georgia Institute of Technology" 
+					subtitle="Bachelor of Science in Computer Science" 
+					date="August 2025 – May 2027" 
+					location="Atlanta, GA"
+				/>
+				<ExperienceItem 
+					title="John Jay Senior High School" 
+					subtitle="High School Diploma, Computer Science focus" 
+					date="September 2021 – June 2025" 
+					location="Hopewell Junction, NY"
+				/>
+			</PaperSection>
+
+			<PaperSection title="Skills & Certifications">
+				<div className="paper-item break-inside-avoid">
+					<div className="paper-item-header">Technical Proficiencies</div>
+					<p className="mt-1">
+						Reverse Engineering, Statistics, Data Visualization (D3.js), Cybersecurity Analysis, 
+						Cloud Infrastructure (Azure, Railway), Full-stack Development (React, Next.js, Node.js), 
+						Computer Vision (OpenCV), Systems Programming.
+					</p>
 				</div>
-			</section>
+				<div className="paper-item break-inside-avoid">
+					<div className="paper-item-header">Certifications</div>
+					<ul className="paper-list">
+						<li>IBM Cybersecurity Analyst Assessment</li>
+						<li>Advanced Cybersecurity Concepts and Capstone Project</li>
+						<li>Network Security & Database Vulnerabilities</li>
+						<li>Operating Systems: Overview, Administration, and Security</li>
+						<li>Penetration Testing, Incident Response and Forensics</li>
+					</ul>
+				</div>
+			</PaperSection>
+
+			<PaperSection title="Honors & Awards">
+				<ul className="paper-list">
+					<li>Congressional App Challenge Winner – Demoed at the US Capitol</li>
+					<li>FTC Robotics World Championship Qualifier</li>
+					<li>Lockheed Martin CyberQuest Participant</li>
+					<li>Carnegie Mellon Coding Competition (CMIMC) Participant</li>
+					<li>US National Chemistry Olympiad (USNCO) Participant</li>
+				</ul>
+			</PaperSection>
+
+			<footer className="paper-fingerprint">
+				<p>GPG Fingerprint: F10A 5FFB 4E9B 8286 3D31  E7E7 6508 E71E C531 8FAD</p>
+				<div className="mt-2">
+					<Link href="/nash.gpg" target="_blank" className="italic hover:not-italic">Download Public Key</Link>
+				</div>
+			</footer>
 		</main>
 	);
 }
