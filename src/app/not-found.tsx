@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { TerminalPrompt } from "@/components/TerminalPrompt";
+import { TerminalWindow } from "@/components/TerminalWindow";
 
 export const metadata = {
 	title: "404: Page Not Found",
@@ -7,19 +9,29 @@ export const metadata = {
 
 export default function NotFound() {
 	return (
-		<main className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-			<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-				<div className="pb-12 pt-32 md:pb-20 md:pt-40">
-					<div className="mb-12 flex grow flex-col items-center lg:mb-0 lg:mt-20 lg:items-start">
-						<h1 className="mb-8 text-center text-5xl font-extrabold tracking-tight text-white lg:text-left">
-							404: Page Not Found
+		<main className="min-h-screen p-4 sm:p-8 md:p-12 lg:p-24 bg-black text-green-500 font-mono flex items-center justify-center">
+			<div className="w-full max-w-2xl">
+				<TerminalWindow title="error-handler.sh">
+					<TerminalPrompt command="curl -I /dev/null" />
+					<div className="py-4 space-y-4">
+						<h1 className="text-2xl font-bold text-red-500 uppercase tracking-tighter">
+							[ERROR] 404: PAGE_NOT_FOUND
 						</h1>
-						<p>{"This page doesn't seem to exist. Perhaps you mistyped the URL?"}</p>
-						<Link href="/" className="my-4 rounded-md bg-purple-700 px-2 py-1 hover:bg-purple-600">
-							Back to the homepage!
-						</Link>
+						<p className="text-gray-300">
+							The requested resource was not found on this system. 
+							The kernel could not resolve the path you provided.
+						</p>
+						<div className="pt-4 border-t border-gray-800">
+							<TerminalPrompt command="cd .." />
+							<Link 
+								href="/" 
+								className="inline-block mt-2 px-4 py-2 border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-all"
+							>
+								RETURN_TO_ROOT
+							</Link>
+						</div>
 					</div>
-				</div>
+				</TerminalWindow>
 			</div>
 		</main>
 	);
