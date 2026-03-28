@@ -1,26 +1,21 @@
 import Link from "next/link";
-
-export const metadata = {
-	title: "404: Page Not Found",
-	description: "This page doesn't exist",
-};
+import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
-	return (
-		<main className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-			<div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-				<div className="pb-12 pt-32 md:pb-20 md:pt-40">
-					<div className="mb-12 flex grow flex-col items-center lg:mb-0 lg:mt-20 lg:items-start">
-						<h1 className="mb-8 text-center text-5xl font-extrabold tracking-tight text-white lg:text-left">
-							404: Page Not Found
-						</h1>
-						<p>{"This page doesn't seem to exist. Perhaps you mistyped the URL?"}</p>
-						<Link href="/" className="my-4 rounded-md bg-purple-700 px-2 py-1 hover:bg-purple-600">
-							Back to the homepage!
-						</Link>
-					</div>
-				</div>
-			</div>
-		</main>
-	);
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-stone-950 px-4 text-center">
+      <h1 className="mb-4 text-9xl font-bold text-amber-500/20">404</h1>
+      <h2 className="mb-8 text-2xl font-semibold text-stone-100">Page not found</h2>
+      <p className="mb-12 max-w-md text-stone-400">
+        The page you are looking for doesn&apos;t exist or has been moved to a new location.
+      </p>
+      <Link
+        href="/"
+        className="flex items-center gap-2 rounded-lg bg-stone-100 px-6 py-3 font-medium text-stone-900 transition-colors hover:bg-stone-200"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to home
+      </Link>
+    </div>
+  );
 }
