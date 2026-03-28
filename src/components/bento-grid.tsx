@@ -34,7 +34,7 @@ const BentoCard = ({
   name: string;
   className?: string;
   background?: ReactNode;
-  Icon?: any;
+  Icon?: React.ElementType;
   description: string;
   href: string;
   cta?: string;
@@ -65,7 +65,7 @@ const BentoCard = ({
       )}
     >
       <Link href={href} className="pointer-events-auto flex items-center text-sm font-medium text-amber-500 hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300">
-        {cta || "Learn more"}
+        {cta ?? "Learn more"}
         <ArrowRightIcon className="ml-2 h-4 w-4" />
       </Link>
     </div>
