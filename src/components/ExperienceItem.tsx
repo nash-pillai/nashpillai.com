@@ -17,7 +17,7 @@ export function ExperienceItem({
 				<span>{title}</span>
 				<span className="font-normal text-[0.95em]">{date}</span>
 			</div>
-			{(subtitle || location) && (
+			{(subtitle ?? location) && (
 				<div className="paper-item-subheader">
 					{subtitle && <span>{subtitle}</span>}
 					{location && <span className="font-normal not-italic">{location}</span>}
