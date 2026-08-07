@@ -75,37 +75,45 @@ const projects = [
 
 const experiences = [
 	{
+		title: "Cybersecurity Intern",
+		org: "PrizePicks",
+		date: "May 2026 – Present",
+		points: [
+			"Found all critical/high findings in the AppSec team's external pentest plus 14 additional findings, leading to 5 security incidents and ~$23k in HackerOne-equivalent value",
+			"Reviewed internal AI/MCP systems, finding a GCP root RCE, cross-user credential impersonation, OAuth/PKCE flaws, non-expiring JWTs, path traversal, and broad service-account scopes",
+			"Found IT and internal-tooling risks across company Macs, privileged Google Groups, 1Password vault access, production dashboards, and office physical access controls",
+			"Built CrowdStrike Falcon SIEM automation and alerts, including an MCP server, incident-response skill, and custom detections for new data sources",
+		],
+	},
+	{
+		title: "Vice President & Former CTF Team Captain",
+		org: "GreyHat @ Georgia Tech",
+		date: "Aug 2025 – Present",
+		points: [
+			"Led development of an LLM-based CTF solving agent with writeup-driven self-training",
+			"CSAW: 13th in North America; corCTF: top 10%; Buckeye CTF competitor",
+		],
+	},
+	{
 		title: "Director of Web Development",
 		org: "Ember Learning",
-		date: "Aug 2023 - Present",
+		date: "Aug 2023 – May 2026",
 		points: [
 			"AP Exam Simulator: $400k revenue, 160k students",
 			"deaplearning.com: AI tutors, 300k users, $10k ARR",
 			"Infrastructure: Azure, Railway",
-			"emberlearning.org: AI teaching assistants at district scale",
+			"Telemetry and observability with Sentry and PostHog; A/B testing for retention",
 		],
 	},
 	{
-		title: "CTF Team Captain",
-		org: "GreyHat @ Georgia Tech",
-		date: "Aug 2025 - Present",
-		points: ["LLM-based CTF solving agent", "CSAW 13th North America, corCTF top 10%"],
-	},
-	{
-		title: "President",
+		title: "President & Programming Leader",
 		org: "Jaybots FTC #16700",
-		date: "June 2022 - May 2025",
+		date: "June 2022 – May 2025",
 		points: [
-			"World Championship, #1 Judge's Choice",
-			"Kalman filters, OpenCV, Kotlin/Java robot control",
-			"Inventory management system",
+			"Led the club to its first World Championship, winning #1 Judge's Choice",
+			"Built an inventory system with user management, part tracking, and supplier scrapers",
+			"Engineered production robot control software in Kotlin and Java",
 		],
-	},
-	{
-		title: "Independent Contractor",
-		org: "Stapplet LLC",
-		date: "June 2025 - Present",
-		points: ["stapplet.com: 100k DAU, found privilege escalation vuln", "React reimplementation"],
 	},
 ];
 
@@ -125,7 +133,7 @@ const backendSkills = [
 	"Python",
 	"Java",
 	"Kotlin",
-	"Docker",
+	"Gradle",
 	"SQL",
 	"PostgreSQL",
 	"Node.js",
@@ -133,8 +141,16 @@ const backendSkills = [
 	"MongoDB",
 	"Git",
 ];
-const webSkills = ["TypeScript", "JavaScript", "React", "Next.js", "Redux", "Tailwind CSS", "Prisma", "Stripe"];
-const devopsSkills = ["Linux", "NixOS", "Azure", "GCP", "Bash", "CI/CD", "Docker"];
+const webSkills = ["TypeScript", "JavaScript", "React", "Next.js", "Redux", "Tailwind CSS", "CSS", "Prisma", "Stripe"];
+const devopsSkills = ["Linux", "NixOS", "Azure", "GCP", "Bash", "CI/CD", "Docker", "Cloudflare Zero Trust"];
+const securitySkills = [
+	"Web App Pentesting",
+	"Burp Suite",
+	"OAuth/OIDC",
+	"SQL Injection",
+	"Cloud Security",
+	"Incident Response",
+];
 
 export default function HomePage() {
 	return (
@@ -161,17 +177,12 @@ export default function HomePage() {
 						{/* Bio line */}
 						<SlideIn direction="bottom" delay={0.8}>
 							<div className="mt-8 max-w-2xl border-t-[4px] border-[#0A0A0A] pt-6">
-								<div className="flex flex-wrap gap-3">
-									{["CS @ Georgia Tech", "Cybersecurity", "AI", "4.0 GPA"].map((tag) => (
-										<span
-											key={tag}
-											className="border-[3px] border-[#0A0A0A] px-3 py-1 text-sm font-bold uppercase tracking-wider text-[#0A0A0A]"
-											style={{ fontFamily: "var(--font-bebas-neue)" }}
-										>
-											{tag}
-										</span>
-									))}
-								</div>
+								<p
+									className="text-xl font-medium leading-snug text-[#0A0A0A] md:text-2xl"
+									style={{ fontFamily: "var(--font-dm-sans)" }}
+								>
+									I break assumptions and find security flaws in everything from APIs and AI systems to office doors.
+								</p>
 							</div>
 						</SlideIn>
 
@@ -357,7 +368,7 @@ export default function HomePage() {
 			</section>
 
 			{/* ===== SKILLS MARQUEE BREAK ===== */}
-			<SkillsMarquee skills={[...backendSkills, ...webSkills, ...devopsSkills]} direction="left" />
+			<SkillsMarquee skills={[...backendSkills, ...webSkills, ...devopsSkills, ...securitySkills]} direction="left" />
 
 			{/* ===== SECTION 4: AWARDS & SKILLS ===== */}
 			<section className="relative overflow-hidden bg-[#FF0054] py-24 md:py-32">
@@ -377,7 +388,7 @@ export default function HomePage() {
 						</div>
 					</SlideIn>
 
-					<div className="mb-20 grid grid-cols-1 gap-6 md:grid-cols-3">
+					<div className="mb-20 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
 						<SlideIn direction="left" delay={0.1}>
 							<div className="border-[4px] border-[#0A0A0A] bg-white p-6">
 								<h3
@@ -441,6 +452,27 @@ export default function HomePage() {
 								</div>
 							</div>
 						</SlideIn>
+						<SlideIn direction="right" delay={0.4}>
+							<div className="border-[4px] border-[#0A0A0A] bg-white p-6">
+								<h3
+									className="mb-4 text-2xl font-bold uppercase text-[#0A0A0A]"
+									style={{ fontFamily: "var(--font-bebas-neue)" }}
+								>
+									Security
+								</h3>
+								<div className="flex flex-wrap gap-3">
+									{securitySkills.map((skill) => (
+										<span
+											key={skill}
+											className="border-[2px] border-[#0A0A0A] bg-[#FFE600] px-3 py-2 text-base font-bold uppercase text-[#0A0A0A] md:text-lg"
+											style={{ fontFamily: "var(--font-bebas-neue)" }}
+										>
+											{skill}
+										</span>
+									))}
+								</div>
+							</div>
+						</SlideIn>
 					</div>
 
 					{/* Awards subsection */}
@@ -486,7 +518,7 @@ export default function HomePage() {
 			</section>
 
 			{/* ===== SKILLS MARQUEE BREAK (reverse) ===== */}
-			<SkillsMarquee skills={[...webSkills, ...backendSkills, ...devopsSkills]} direction="right" />
+			<SkillsMarquee skills={[...webSkills, ...securitySkills, ...backendSkills, ...devopsSkills]} direction="right" />
 
 			{/* ===== SECTION 5: CONTACT ===== */}
 			<section className="grid-bg-light relative overflow-hidden bg-[#0A0A0A] py-24 md:py-32">
