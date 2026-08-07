@@ -89,10 +89,7 @@ const experiences = [
 		title: "CTF Team Captain",
 		org: "GreyHat @ Georgia Tech",
 		date: "Aug 2025 - Present",
-		points: [
-			"LLM-based CTF solving agent",
-			"CSAW 13th North America, corCTF top 10%",
-		],
+		points: ["LLM-based CTF solving agent", "CSAW 13th North America, corCTF top 10%"],
 	},
 	{
 		title: "President",
@@ -108,10 +105,7 @@ const experiences = [
 		title: "Independent Contractor",
 		org: "Stapplet LLC",
 		date: "June 2025 - Present",
-		points: [
-			"stapplet.com: 100k DAU, found privilege escalation vuln",
-			"React reimplementation",
-		],
+		points: ["stapplet.com: 100k DAU, found privilege escalation vuln", "React reimplementation"],
 	},
 ];
 
@@ -127,7 +121,18 @@ const awards = [
 	{ title: "Science Olympiad NY State", detail: "1st Robot Tour, 1st Forensics", short: false },
 ];
 
-const backendSkills = ["Python", "Java", "Kotlin", "Docker", "SQL", "PostgreSQL", "Node.js", "OpenCV", "MongoDB", "Git"];
+const backendSkills = [
+	"Python",
+	"Java",
+	"Kotlin",
+	"Docker",
+	"SQL",
+	"PostgreSQL",
+	"Node.js",
+	"OpenCV",
+	"MongoDB",
+	"Git",
+];
 const webSkills = ["TypeScript", "JavaScript", "React", "Next.js", "Redux", "Tailwind CSS", "Prisma", "Stripe"];
 const devopsSkills = ["Linux", "NixOS", "Azure", "GCP", "Bash", "CI/CD", "Docker"];
 
@@ -137,17 +142,16 @@ export default function HomePage() {
 			<JsonLd data={jsonLd} />
 
 			{/* ===== SECTION 1: HERO ===== */}
-			<section className="relative min-h-screen overflow-hidden bg-[#F5F0E8] grid-bg">
+			<section className="grid-bg relative min-h-screen bg-[#F5F0E8]">
 				{/* Decorative corner blocks */}
 				<div className="absolute right-0 top-0 h-32 w-32 border-b-[6px] border-l-[6px] border-[#0A0A0A] bg-[#0047FF] md:h-48 md:w-48" />
 				<div className="absolute bottom-0 left-0 h-24 w-24 border-r-[6px] border-t-[6px] border-[#0A0A0A] bg-[#FF0054] md:h-36 md:w-36" />
 
 				<div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-20 md:px-12">
-					{/* Rotated tagline on left edge */}
+					{/* Rotated tagline on left edge of section */}
 					<HeroTagline />
-
 					{/* Main content block with thick border */}
-					<div className="relative border-[6px] border-[#0A0A0A] bg-[#F5F0E8] p-8 md:p-12 lg:p-16">
+					<div className="relative overflow-visible border-[6px] border-[#0A0A0A] bg-[#F5F0E8] p-8 md:p-12 lg:p-16">
 						{/* The big name */}
 						<HeroName />
 
@@ -157,12 +161,8 @@ export default function HomePage() {
 						{/* Bio line */}
 						<SlideIn direction="bottom" delay={0.8}>
 							<div className="mt-8 max-w-2xl border-t-[4px] border-[#0A0A0A] pt-6">
-								<p className="text-lg text-[#0A0A0A]/80 md:text-xl" style={{ fontFamily: "var(--font-dm-sans)" }}>
-									Honors CS @ Georgia Tech. B.S. Computer Science, Cybersecurity &amp; AI concentrations.
-									4.0 GPA. 8 years programming. NixOS user.
-								</p>
-								<div className="mt-4 flex flex-wrap gap-3">
-									{["Fishkill, NY"].map((tag) => (
+								<div className="flex flex-wrap gap-3">
+									{["CS @ Georgia Tech", "Cybersecurity", "AI", "4.0 GPA"].map((tag) => (
 										<span
 											key={tag}
 											className="border-[3px] border-[#0A0A0A] px-3 py-1 text-sm font-bold uppercase tracking-wider text-[#0A0A0A]"
@@ -201,6 +201,14 @@ export default function HomePage() {
 								>
 									<Mail size={18} /> Email
 								</Link>
+								<Link
+									href="/resume"
+									target="_blank"
+									className="invert-hover flex items-center gap-2 border-[3px] border-[#0A0A0A] bg-[#0047FF] px-4 py-2 font-bold uppercase text-white hover:bg-[#F5F0E8] hover:text-[#0047FF]"
+									style={{ fontFamily: "var(--font-bebas-neue)" }}
+								>
+									<FileText size={18} /> Resume
+								</Link>
 							</div>
 						</SlideIn>
 					</div>
@@ -211,7 +219,7 @@ export default function HomePage() {
 			</section>
 
 			{/* ===== SECTION 2: PROJECTS ===== */}
-			<section className="relative overflow-hidden bg-[#0A0A0A] stripe-pattern-light py-24 md:py-32">
+			<section className="stripe-pattern-light relative overflow-hidden bg-[#0A0A0A] py-24 md:py-32">
 				<div className="mx-auto max-w-7xl px-6 md:px-12">
 					{/* Section header */}
 					<SlideIn direction="left" rotate={-3}>
@@ -295,7 +303,7 @@ export default function HomePage() {
 			</section>
 
 			{/* ===== SECTION 3: EXPERIENCE ===== */}
-			<section className="relative overflow-hidden bg-[#0047FF] dot-pattern-light py-24 md:py-32">
+			<section className="dot-pattern-light relative overflow-hidden bg-[#0047FF] py-24 md:py-32">
 				{/* Decorative rotated text */}
 				<div
 					className="absolute -right-16 top-1/4 hidden -rotate-90 text-[10vw] font-bold leading-none tracking-tighter text-white/5 lg:block"
@@ -326,15 +334,16 @@ export default function HomePage() {
 									>
 										{exp.title}
 									</h3>
-									<p
-										className="mt-1 text-lg font-bold text-[#FFE600]"
-										style={{ fontFamily: "var(--font-bebas-neue)" }}
-									>
+									<p className="mt-1 text-lg font-bold text-[#FFE600]" style={{ fontFamily: "var(--font-bebas-neue)" }}>
 										{exp.org}
 									</p>
 									<ul className="mt-3 space-y-1">
 										{exp.points.map((point) => (
-											<li key={point} className="flex items-start gap-2 text-sm text-white/90" style={{ fontFamily: "var(--font-dm-sans)" }}>
+											<li
+												key={point}
+												className="flex items-start gap-2 text-sm text-white/90"
+												style={{ fontFamily: "var(--font-dm-sans)" }}
+											>
 												<span className="mt-1 h-2 w-2 flex-shrink-0 bg-[#FFE600]" />
 												{point}
 											</li>
@@ -353,7 +362,7 @@ export default function HomePage() {
 			{/* ===== SECTION 4: AWARDS & SKILLS ===== */}
 			<section className="relative overflow-hidden bg-[#FF0054] py-24 md:py-32">
 				{/* Dot pattern overlay */}
-				<div className="absolute inset-0 dot-pattern" style={{ opacity: 0.3 }} />
+				<div className="dot-pattern absolute inset-0" style={{ opacity: 0.3 }} />
 
 				<div className="relative mx-auto max-w-7xl px-6 md:px-12">
 					{/* Skills subsection */}
@@ -372,16 +381,16 @@ export default function HomePage() {
 						<SlideIn direction="left" delay={0.1}>
 							<div className="border-[4px] border-[#0A0A0A] bg-white p-6">
 								<h3
-									className="mb-4 text-xl font-bold uppercase text-[#0A0A0A]"
+									className="mb-4 text-2xl font-bold uppercase text-[#0A0A0A]"
 									style={{ fontFamily: "var(--font-bebas-neue)" }}
 								>
 									Backend
 								</h3>
-								<div className="flex flex-wrap gap-2">
+								<div className="flex flex-wrap gap-3">
 									{backendSkills.map((skill) => (
 										<span
 											key={skill}
-											className="border-[2px] border-[#0A0A0A] bg-[#FF0054] px-3 py-1 text-xs font-bold uppercase text-white"
+											className="border-[2px] border-[#0A0A0A] bg-[#FF0054] px-3 py-2 text-base font-bold uppercase text-white md:text-lg"
 											style={{ fontFamily: "var(--font-bebas-neue)" }}
 										>
 											{skill}
@@ -393,16 +402,16 @@ export default function HomePage() {
 						<SlideIn direction="bottom" delay={0.2}>
 							<div className="border-[4px] border-[#0A0A0A] bg-white p-6">
 								<h3
-									className="mb-4 text-xl font-bold uppercase text-[#0A0A0A]"
+									className="mb-4 text-2xl font-bold uppercase text-[#0A0A0A]"
 									style={{ fontFamily: "var(--font-bebas-neue)" }}
 								>
 									Web
 								</h3>
-								<div className="flex flex-wrap gap-2">
+								<div className="flex flex-wrap gap-3">
 									{webSkills.map((skill) => (
 										<span
 											key={skill}
-											className="border-[2px] border-[#0A0A0A] bg-[#0047FF] px-3 py-1 text-xs font-bold uppercase text-white"
+											className="border-[2px] border-[#0A0A0A] bg-[#0047FF] px-3 py-2 text-base font-bold uppercase text-white md:text-lg"
 											style={{ fontFamily: "var(--font-bebas-neue)" }}
 										>
 											{skill}
@@ -414,16 +423,16 @@ export default function HomePage() {
 						<SlideIn direction="right" delay={0.3}>
 							<div className="border-[4px] border-[#0A0A0A] bg-white p-6">
 								<h3
-									className="mb-4 text-xl font-bold uppercase text-[#0A0A0A]"
+									className="mb-4 text-2xl font-bold uppercase text-[#0A0A0A]"
 									style={{ fontFamily: "var(--font-bebas-neue)" }}
 								>
 									DevOps
 								</h3>
-								<div className="flex flex-wrap gap-2">
+								<div className="flex flex-wrap gap-3">
 									{devopsSkills.map((skill) => (
 										<span
 											key={skill}
-											className="border-[2px] border-[#0A0A0A] bg-[#0A0A0A] px-3 py-1 text-xs font-bold uppercase text-white"
+											className="border-[2px] border-[#0A0A0A] bg-[#0A0A0A] px-3 py-2 text-base font-bold uppercase text-white md:text-lg"
 											style={{ fontFamily: "var(--font-bebas-neue)" }}
 										>
 											{skill}
@@ -480,7 +489,7 @@ export default function HomePage() {
 			<SkillsMarquee skills={[...webSkills, ...backendSkills, ...devopsSkills]} direction="right" />
 
 			{/* ===== SECTION 5: CONTACT ===== */}
-			<section className="relative overflow-hidden bg-[#0A0A0A] grid-bg-light py-24 md:py-32">
+			<section className="grid-bg-light relative overflow-hidden bg-[#0A0A0A] py-24 md:py-32">
 				<div className="mx-auto max-w-5xl px-6 md:px-12">
 					<SlideIn direction="bottom">
 						<h2
@@ -493,7 +502,8 @@ export default function HomePage() {
 
 					<SlideIn direction="left" delay={0.2}>
 						<p className="mb-12 max-w-xl text-lg text-[#F5F0E8]/70" style={{ fontFamily: "var(--font-dm-sans)" }}>
-							Always open to interesting projects, collaborations, and conversations about security, AI, or web development.
+							Always open to interesting projects, collaborations, and conversations about security, AI, or web
+							development.
 						</p>
 					</SlideIn>
 
@@ -503,10 +513,7 @@ export default function HomePage() {
 								<Mail size={24} className="flex-shrink-0" />
 								<div>
 									<div className="text-xs uppercase tracking-widest opacity-60">Email</div>
-									<div
-										className="text-2xl font-bold md:text-3xl"
-										style={{ fontFamily: "var(--font-bebas-neue)" }}
-									>
+									<div className="text-2xl font-bold md:text-3xl" style={{ fontFamily: "var(--font-bebas-neue)" }}>
 										nash.pillai@protonmail.com
 									</div>
 								</div>
@@ -518,10 +525,7 @@ export default function HomePage() {
 								<Linkedin size={24} className="flex-shrink-0" />
 								<div>
 									<div className="text-xs uppercase tracking-widest opacity-60">LinkedIn</div>
-									<div
-										className="text-2xl font-bold md:text-3xl"
-										style={{ fontFamily: "var(--font-bebas-neue)" }}
-									>
+									<div className="text-2xl font-bold md:text-3xl" style={{ fontFamily: "var(--font-bebas-neue)" }}>
 										linkedin.com/in/nash-pillai
 									</div>
 								</div>
@@ -533,10 +537,7 @@ export default function HomePage() {
 								<Github size={24} className="flex-shrink-0" />
 								<div>
 									<div className="text-xs uppercase tracking-widest opacity-60">GitHub</div>
-									<div
-										className="text-2xl font-bold md:text-3xl"
-										style={{ fontFamily: "var(--font-bebas-neue)" }}
-									>
+									<div className="text-2xl font-bold md:text-3xl" style={{ fontFamily: "var(--font-bebas-neue)" }}>
 										github.com/nash-pillai
 									</div>
 								</div>
@@ -548,10 +549,7 @@ export default function HomePage() {
 								<FileText size={24} className="flex-shrink-0" />
 								<div>
 									<div className="text-xs uppercase tracking-widest opacity-60">Resume</div>
-									<div
-										className="text-2xl font-bold md:text-3xl"
-										style={{ fontFamily: "var(--font-bebas-neue)" }}
-									>
+									<div className="text-2xl font-bold md:text-3xl" style={{ fontFamily: "var(--font-bebas-neue)" }}>
 										View Resume
 									</div>
 								</div>
@@ -563,28 +561,25 @@ export default function HomePage() {
 								<Key size={24} className="flex-shrink-0" />
 								<div>
 									<div className="text-xs uppercase tracking-widest opacity-60">GPG Key</div>
-									<div
-										className="break-all text-sm font-mono text-[#0047FF] md:text-base"
-									>
+									<div className="break-all font-mono text-sm text-[#0047FF] md:text-base">
 										F10A5FFB4E9B82863D31E7E76508E71EC5318FAD
 									</div>
 								</div>
 							</ContactLink>
 						</ContactItem>
-					</ContactContainer>
 
-					{/* Hidden rickroll link */}
-					<SlideIn direction="bottom" delay={0.6}>
-						<div className="mt-16 text-center">
-							<Link
-								href="/about"
-								className="text-xs uppercase tracking-widest text-[#F5F0E8]/20 transition-colors hover:text-[#FF0054]"
-								style={{ fontFamily: "var(--font-bebas-neue)" }}
-							>
-								secret darknet portal
-							</Link>
-						</div>
-					</SlideIn>
+						<ContactItem direction="right">
+							<ContactLink href="/about" newTab className="flex items-center gap-4">
+								<ExternalLink size={24} className="flex-shrink-0" />
+								<div>
+									<div className="text-xs uppercase tracking-widest opacity-60">My Darknet Site</div>
+									<div className="text-2xl font-bold md:text-3xl" style={{ fontFamily: "var(--font-bebas-neue)" }}>
+										Onion v3 address
+									</div>
+								</div>
+							</ContactLink>
+						</ContactItem>
+					</ContactContainer>
 
 					{/* Footer */}
 					<div className="mt-24 border-t-[4px] border-[#F5F0E8]/10 pt-8 text-center">
